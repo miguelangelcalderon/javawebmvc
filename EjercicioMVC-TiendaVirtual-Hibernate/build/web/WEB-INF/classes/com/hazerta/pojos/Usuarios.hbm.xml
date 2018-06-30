@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-jun-2018 19:54:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hazerta.pojos.Usuarios" table="usuarios" catalog="tiendagenerica" optimistic-lock="version">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="id_usuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="clientes" class="com.hazerta.pojos.Clientes" fetch="select">
+            <column name="nif_cliente" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="perfiles" class="com.hazerta.pojos.Perfiles" fetch="select">
+            <column name="id_perfil" not-null="true" />
+        </many-to-one>
+        <property name="login" type="string">
+            <column name="login" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

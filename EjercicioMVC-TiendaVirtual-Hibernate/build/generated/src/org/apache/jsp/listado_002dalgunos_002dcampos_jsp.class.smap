@@ -1,0 +1,35 @@
+SMAP
+listado_002dalgunos_002dcampos_jsp.java
+JSP
+*S JSP
+*F
++ 0 listado-algunos-campos.jsp
+listado-algunos-campos.jsp
++ 1 total-carrito.jsp
+total-carrito.jsp
++ 2 menu.html
+menu.html
+*L
+5,11:53
+15,22:64
+1#1,3:86
+3,3:89
+5:92
+6:93,3
+7,6:96
+13:102,3
+14:105
+15:106,3
+16:109
+17:110,3
+18:113
+36#0,2:114
+1#2,7:116
+37#0,11:123
+48,2:135
+49,2:137
+51,3:139,3
+54,2:148
+56,2:151
+57,7:153
+*E

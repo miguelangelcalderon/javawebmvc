@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo llamada a PHP que devuelve JSON de una BBDD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <h2>Ejemplo llamada a JAVA que devuelve JSON de una BBDD</h2>
+        <br>
+        <h3>Listado de la promociones inmobiliarias</h3>
+        <table border="1" id="tabla">
+            <thead>
+                <tr><th>Codigo</th>
+                    <th>Foto</th>
+                    <th>Pvp</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody id="datos">
+                
+            </tbody>
+        </table>
+        <input type="button" id="carga" value="carga datos articulos">
+        <span id="loader"></span>
+        <script src="jquery-1.9.1.js"></script>
+
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                function loader() {
+                   $("#loader").html("Cargado datoss");
+               }
+                function mostrar(datos) {
+                   $("#loader").html("");
+                   
+                   var cadenaHtml="";
+                    $.each(datos,function(indice,elemento) {
+                        cadenaHtml+="<tr><td>"+elemento.id+"</td><td><img src='img/"
+                                        +elemento.foto+"' width='100' height='100'></td><td>"
+                                        +elemento.pvp+"</td><td>"
+                                        +elemento.nombre+"</td></tr>";
+                    });
+                   $("#datos").html(cadenaHtml); 
+                   $("#tabla").dataTable();
+                  }
+            
+                function problemas(obj,texto,excepcion) {
+                    alert(texto+" "+excepcion);
+                }
+                
+                $("#carga").click(function() {
+                    
+                    $.ajax({ 
+                      url:"/EjercicioMVC-TiendaVirtual/ArticulosJson",
+                      type:"GET",
+                      dataType:"json",
+                      success:mostrar,
+                      beforeSend:loader,
+                      error:problemas
+                    });
+                    
+                });
+            });
+        </script>     
+    </body>
+</html>

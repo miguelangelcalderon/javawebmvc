@@ -1,0 +1,28 @@
+SMAP
+index_jsp.java
+JSP
+*S JSP
+*F
++ 0 index.jsp
+index.jsp
++ 1 total-carrito.jsp
+total-carrito.jsp
++ 2 menu.html
+menu.html
+*L
+1,56:50
+1#1,3:106
+3,3:109
+5:112
+6:113,3
+7,6:116
+13:122,3
+14:125
+15:126,3
+16:129
+17:130,3
+18:133
+56#0,2:134
+1#2,7:136
+57#0,10:143
+*E
